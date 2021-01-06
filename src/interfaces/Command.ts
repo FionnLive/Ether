@@ -8,5 +8,6 @@ export interface RunFunction {
 export interface Command {
 	name: string;
 	category: string;
+	requiredArgs: Array<string> | null;
 	run: RunFunction;
 }
