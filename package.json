@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "yarn lint && yarn build && node ./dist/index.js",
+		"start": "rm -rf dist && yarn build && node ./dist/src/index.js",
 		"test": "ts-node-dev --respawn --transpile-only --poll ./src/index.ts",
 		"lint": "prettier --write .",
 		"build": "tsc"

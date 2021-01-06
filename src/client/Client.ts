@@ -3,6 +3,7 @@ import {
 	Client,
 	MessageEmbedOptions,
 	Message,
+	MessageEmbed,
 	Intents,
 	Collection,
 } from 'discord.js';
@@ -47,6 +48,12 @@ class Bot extends Client {
 			this.events.set(file.name, file);
 			this.on(file.name, file.run.bind(null, this));
 		});
+	}
+	public embed(options: MessageEmbedOptions, message: Message): MessageEmbed {
+		return new MessageEmbed({ color: 'RANDOM' ,...options }).setFooter(
+			`${message.author.tag} || ${this.user.username}`,
+			message.author.displayAvatarURL({ format: 'png', dynamic: true })
+		);
 	}
 }
 
